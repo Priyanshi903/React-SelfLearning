@@ -1,0 +1,78 @@
+React: Client side Javascript library for building user interfaces.
+
+React code is written in a declarative way: Define the desired target state(s) and let react figure out the actual
+javascript DOM instructions
+
+npx create-react-app basics
+
+index.js->index.html->app.js
+document.getElementById('root') replaced by
+<App />
+
+JSX stands for JavaScript XML.
+JSX allows us to write HTML elements in JavaScript and place them in the DOM without any createElement() and/or
+appendChild() methods.
+example, const myElement = <h1>I Love JSX!</h1>; //with jsx
+const myElement = React.createElement('h1', {}, 'I do not use JSX!');
+
+JSX converts HTML tags into react elements.
+The class attribute is a much used attribute in HTML, but since JSX is rendered as JavaScript, and the class keyword is
+a reserved word in JavaScript, you are not allowed to use it in JSX.
+JSX follows XML rules, and therefore HTML elements must be properly closed.
+The HTML code must be wrapped in ONE top level element. For that we can use <div></div>, but generally we use fragment.
+You can use a "fragment" to wrap multiple lines.<></>.This will prevent unnecessarily adding extra nodes to the DOM.
+example, const myElement = (
+<>
+
+    <p>I am a paragraph.</p>
+    <p>I am a paragraph too.</p>
+
+</>
+);
+With JSX you can write expressions inside curly braces { }. example, const myElement = <h1>React is {5 + 5} times better
+with JSX</h1>;
+
+The class attribute is a much used attribute in HTML, but since JSX is rendered as JavaScript, and the class keyword is
+a reserved word in JavaScript, you are not allowed to use it in JSX.
+Use attribute className instead.example,
+const myElement = <h1 className="myclass">Hello World</h1>;
+React supports if statements, but not inside JSX.To be able to use conditional statements in JSX, you should put the if
+statements outside of the JSX, or you could use a ternary expression instead.
+example, const myElement = <h1>{(x) < 10 ? "Hello" : "Goodbye" }</h1>;
+in order to embed a JavaScript expression inside JSX, the JavaScript must be wrapped with curly braces, {}.
+
+        Upper case elements r defined by us in html.example, <ExpenseItem></ExpenseItem>
+
+        Props are arguments passed into React components.
+        Props are passed to components via HTML attributes.
+        props stands for properties.
+        React Props are like function arguments in JavaScript and attributes in HTML.
+        React Props are read-only! You will get an error if you try to change their value.
+        example,
+        function Car(props) {
+        return <h2>I am a { props.brand }!</h2>;
+        }
+
+        function Garage() {
+        const carName = "Ford";
+        return (
+        <>
+
+            <h1>Who lives in my garage?</h1>
+            <Car brand={ carName } />
+        </>
+        );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(
+        <Garage />);
+
+        Which kind of code do you write when using React.js? Declarative JS code
+
+        Lifting State Up: Passing data from child to parent
+
+        Components that does not contain any states(eg. title,amount,etc r states) r called
+        stateless/presentational/dumb components and opposite is called smart/stateful component.
+
+        The CSS inside a module is available only for the component that imported it, and you do not have to worry about name conflicts.

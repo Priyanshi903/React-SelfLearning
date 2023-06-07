@@ -1,0 +1,26 @@
+ReactDOM: Interface to the web
+Real DOM: what user sees
+
+props: Data from parent component
+context: component-wide data
+state: internal data
+
+whenever state, props, context changes component is reevaluated
+Re-Evaluating Components !== Re-Rendering the DOM
+Changes to the real DOM are only made for differences between evaluations 
+Virtual DOM diffing: and will change only for differences, everything else will not be rerendered
+If child component changes, then only reevaluate:-
+example,      export default React.memo(DemoOutput).........DemoOutput is child component
+but memo() costs performance issue as it checks states again nd again
+
+If we know function is not goint to change , then we can store function in react callback.....normally every tym func is called..new object is created
+but with callback only one object will be there for that function, example
+const toggleParagraphHandler= useCallback(()=>{
+	setShowParagraph((prevShowParagraph => !prevShowParagraph)
+},[ ]);// wrap toggleParagraphHandler() function through useCallBack()
+[ ] will take dependencies on which we want to regenerate func object
+
+useMemo() is used for data to memoize(so that any array,etc need not to be reevaluated)
+const sortedList = useMemo(()=>{
+	return items.sort((a,b)=>a-b);
+},[items]); // sortedList is an array

@@ -1,0 +1,17 @@
+useEffect:-
+1. No dependency passed:
+useEffect(() => {
+  //this func Runs on every render(after every reevaluation of component)
+});
+
+2. An empty array:
+useEffect(() => {
+  //Runs only on the first render
+}, []);
+
+3. Props or state values:
+useEffect(() => {
+  //Runs on the first render
+  //And any time any dependency value changes([] is an array of dependency)
+}, [prop, state]);
+

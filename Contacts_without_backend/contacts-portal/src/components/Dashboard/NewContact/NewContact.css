@@ -1,0 +1,18 @@
+.addContact {
+  color: white;
+  margin-top: 1.5rem;
+  background-color: rgba(128, 0, 128, 0.89);
+  float: right;
+}
+
+.box {
+  width: 80%;
+  height: 50px;
+  margin: auto;
+  border-radius: 5px;
+}
+
+li {
+  margin-top: 1.5rem;
+  flex-direction: column;
+}

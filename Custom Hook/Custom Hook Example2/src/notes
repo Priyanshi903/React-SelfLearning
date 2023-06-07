@@ -1,0 +1,7 @@
+ // const { isLoading, error, sendrequest } = useHttp({ OR
+  const httpData = useHttp({
+    url: 'https://http-task-react-default-rtdb.firebaseio.com/tasks.json',
+    transformtasks
+  });
+
+  const { isLoading, error, sendrequest: fetchTasks } = httpData;

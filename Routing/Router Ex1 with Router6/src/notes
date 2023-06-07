@@ -1,0 +1,9 @@
+ npm i react-router-dom@5
+ useHistory:->useNavigate in router v6
+ const navigate=useNavigate();
+ additional features:-
+ navigate(-1),to go back to prev page, 
+ navigate(-2),
+ navigate(1),to go forward
+
+ Prompt is not present in v6 which is used for confirmation while leaving the page

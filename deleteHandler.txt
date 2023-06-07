@@ -1,0 +1,9 @@
+DELETE :----
+{/* <td className="tdcentercontent">
+            {panelist.active && <button type="submit" className={!panelist.active ? '' : 'delete'}
+              onClick={() => onDeletePanelistFromDriveHandler(panelist.id)}
+            >
+              X
+            </button>}
+          </td> */}
+

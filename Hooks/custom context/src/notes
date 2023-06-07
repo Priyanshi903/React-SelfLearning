@@ -1,0 +1,24 @@
+useReducer:-
+for state management
+If you find yourself keeping track of multiple pieces of state that rely on complex logic, useReducer may be useful.
+The useReducer Hook accepts two arguments.
+    useReducer(<reducer>, <initialState>)
+The reducer function contains your custom state logic and the initialStatecan be a simple value but generally will contain an object.
+The useReducer Hook returns the current state and a dispatch method.
+for updating the state that relies on other states
+
+const [state,dispatchFn]=useReducer(reducerFn,initialState,initFn);
+
+state: The state snapshot used in the component render/reevaluation cycle
+dispatchFn: A function that can be used to dispatch a new action (i.e. trigger an update of the state)
+reducerFn:    (prevState,action)=>newState
+            A function that is triggered once an action is dispatched (via dispatchFn())- it recieves the latest state snapshot and should
+            return the new , updated state.
+initFn: A function to set the initial state programatically
+
+
+useContext:-
+React Context is a way to manage state globally.
+To illustrate, we have many nested components. The component at the top and bottom of the stack need access to the state.
+To do this without Context, we will need to pass the state as "props" through each nested component.
+React context is not optimized for high frequency changes

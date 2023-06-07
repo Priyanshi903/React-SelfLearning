@@ -1,0 +1,3 @@
+firebase->create project -> build->authentication->sign in methods->Email/Password->edit->
+Enable(Email/Password), do not enable Email link (passwordless sign-in)
+Project overview->settings->web api key ([API_KEY])
